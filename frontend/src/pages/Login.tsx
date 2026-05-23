@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_BASE = "http://localhost:3001/api/crm";
+const API_BASE = "/api/crm";
 
 export default function Login() {
   const [username, setUsername] = useState("");

@@ -9,7 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Select, SelectItem } from "@/components/ui/select";
 
-const API_BASE = "http://localhost:3001/api/crm";
+const API_BASE = "/api/crm";
 
 const PROJECT_STATUSES = [
   { value: 'started', label: 'Started' },

@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -8,7 +7,7 @@ import { Search, Edit2, Trash2, Library, User, MapPin, Calculator, LayoutGrid, L
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_BASE = "http://localhost:3001/api/crm";
+const API_BASE = "/api/crm";
 
 const PROJECT_STATUSES = [
   { value: 'started', label: 'Started' },

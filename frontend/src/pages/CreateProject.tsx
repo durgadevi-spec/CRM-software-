@@ -8,7 +8,7 @@ import { Briefcase, User, Receipt, MapPin, Building2, Calculator, Library } from
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_BASE = "http://localhost:3001/api/crm";
+const API_BASE = "/api/crm";
 
 export default function CreateProject() {
   const [name, setName] = useState("");
