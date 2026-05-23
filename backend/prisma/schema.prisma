@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model boq_projects {
+  id             String   @id @default(uuid()) @db.VarChar(100)
+  name           String   @db.VarChar(255)
+  client         String?  @db.VarChar(255)
+  budget         String?  @db.VarChar(255)
+  location       String?  @db.VarChar(255)
+  client_address String?  @db.Text
+  gst_no         String?  @db.VarChar(255)
+  project_value     String?  @db.VarChar(255)
+  project_status    String   @default("started") @db.VarChar(255)
+  sales_person_name String?  @db.VarChar(255)
+}
+
+model users {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.VarChar(36)
+  username         String   @unique @db.Text
+  password         String   @db.Text
+  role             String   @default("user") @db.Text
+  approved         String   @default("approved") @db.Text
+  approval_reason  String?  @db.Text
+  fullName         String?  @map("full_name") @db.Text
+  mobileNumber     String?  @map("mobile_number") @db.Text
+  department       String?  @db.Text
+  employeeCode     String?  @map("employee_code") @db.Text
+  companyName      String?  @map("company_name") @db.Text
+  gstNumber        String?  @map("gst_number") @db.Text
+  businessAddress  String?  @map("business_address") @db.Text
+  vendorCategories String?  @map("vendor_categories") @db.Text
+  currentProjectId String?  @map("current_project_id") @db.VarChar(100)
+}
